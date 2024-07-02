@@ -1,86 +1,69 @@
-import tkinter as tk
-from tkinter import messagebox
-
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
-
-def celsius_to_kelvin(celsius):
-    return celsius + 273.15
-
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5/9
-
-def fahrenheit_to_kelvin(fahrenheit):
-    return (fahrenheit - 32) * 5/9 + 273.15
-
-def kelvin_to_celsius(kelvin):
-    return kelvin - 273.15
-
-def kelvin_to_fahrenheit(kelvin):
-    return (kelvin - 273.15) * 9/5 + 32
-
-def convert_temperature():
-    try:
-        temperature = float(entry_temp.get())
-        unit = var_unit.get()
-
-        if unit == 'Celsius':
-            fahrenheit = celsius_to_fahrenheit(temperature)
-            kelvin = celsius_to_kelvin(temperature)
-            result.set(f"{temperature:.2f}°C is equal to {fahrenheit:.2f}°F and {kelvin:.2f}K")
-        elif unit == 'Fahrenheit':
-            celsius = fahrenheit_to_celsius(temperature)
-            kelvin = fahrenheit_to_kelvin(temperature)
-            result.set(f"{temperature:.2f}°F is equal to {celsius:.2f}°C and {kelvin:.2f}K")
-        elif unit == 'Kelvin':
-            celsius = kelvin_to_celsius(temperature)
-            fahrenheit = kelvin_to_fahrenheit(temperature)
-            result.set(f"{temperature:.2f}K is equal to {celsius:.2f}°C and {fahrenheit:.2f}°F")
-        else:
-            messagebox.showerror("Error", "Invalid unit. Please select Celsius, Fahrenheit, or Kelvin.")
-    except ValueError:
-        messagebox.showerror("Error", "Please enter a valid temperature.")
+# PRODIGY_SD_01
 
 
-root = tk.Tk()
-root.title("Temperature Converter")
+PRODIGY INFOTECH INTERNSHIP TASK 1
+
+A program that converts temperatures between Celsius, Fahrenheit, and Kelvin scales.
 
 
-frame_input = tk.Frame(root)
-frame_input.pack(pady=10)
+This program converts temperatures between Celsius, Fahrenheit, and Kelvin scales. It prompts the user to input a temperature value and the original unit of measurement,
+and then converts the temperature to the other two units, displaying the converted values to the user.
 
-label_temp = tk.Label(frame_input, text="Enter a temperature value: ")
-label_temp.pack(side=tk.LEFT)
+FEATURES USED ARE :
 
-entry_temp = tk.Entry(frame_input)
-entry_temp.pack(side=tk.LEFT)
+User-Friendly GUI: Built with Tkinter, the program offers a clean and simple interface. 
+-Multiple Conversions: Convert between Celsius, Fahrenheit, and Kelvin. 
+-Real-Time Results: Immediate conversion results upon input. 
+-Error Handling: Validates user input to ensure accurate conversions.
+
+INSTALL :
+
+Step 1: Choose a Programming Language
+
+The Temperature Conversion Program can be written in various programming languages such as Python, Java, C++, etc. 
+For this example, let's choose Python as the programming language.
+
+Step 2: Install Python
+
+If you don't have Python installed on your computer, you can download it from the official Python website: https://www.python.org/downloads/
+
+Step 3: Create a New Python File
+
+Create a new file with a .py extension, for example, PRODIGY_SD_01.py.
+
+Step 4: WRITE T the Code
+
+Step 5: Run the Program
+
+Open a terminal or command prompt, navigate to the directory where you saved the file, 
+and run the program using the following command:
+
+Step 6: Use the Program
+
+Follow the prompts to enter a temperature value and the original unit of measurement.
+The program will convert the temperature to the other two units and display the results.
+
+That's it! You have successfully installed and run the Temperature Conversion Program.
+
+CONCEPTS LEARNED IN THIS :
 
 
-frame_unit = tk.Frame(root)
-frame_unit.pack(pady=10)
 
-label_unit = tk.Label(frame_unit, text="Select the original unit: ")
-label_unit.pack(side=tk.LEFT)
+Here are the concepts learned in this Temperature Conversion Program:
 
-var_unit = tk.StringVar(value="Celsius")
+1. Functions: * Defining and calling functions to perform specific tasks (e.g., celsius_to_fahrenheit, fahrenheit_to_celsius, etc.).
+2.  * Understanding function arguments and return values.
 
-radio_celsius = tk.Radiobutton(frame_unit, text="Celsius (C)", variable=var_unit, value="Celsius")
-radio_celsius.pack(side=tk.LEFT)
+3. Conditional Statements: * Using if-elif-else statements to handle different conditions based on user input (e.g., checking the original unit of measurement). * Understanding the logic behind conditional statements and how they control the program's flow.
 
-radio_fahrenheit = tk.Radiobutton(frame_unit, text="Fahrenheit (F)", variable=var_unit, value="Fahrenheit")
-radio_fahrenheit.pack(side=tk.LEFT)
+4. Input/Output Operations: * Using input() function to get user input (e.g., temperature value and original unit). * Using print() function to display output to the user (e.g., converted temperatures).
 
-radio_kelvin = tk.Radiobutton(frame_unit, text="Kelvin (K)", variable=var_unit, value="Kelvin")
-radio_kelvin.pack(side=tk.LEFT)
+5. Data Types: * Understanding the difference between integer and floating-point numbers (e.g., using float() to convert user input to a floating-point number). * Using string data type to store and manipulate text (e.g., original unit of measurement).
 
+6. String Manipulation: * Using string methods (e.g., upper()) to manipulate and validate user input. * Understanding how to concatenate strings using the + operator.
 
-button_convert = tk.Button(root, text="Convert", command=convert_temperature)
-button_convert.pack(pady=10)
+7. Mathematical Operations: * Performing arithmetic operations (e.g., addition, subtraction, multiplication, division) to convert temperatures between units. * Understanding the order of operations (PEMDAS) and how to use parentheses to group expressions.
 
+8. Program Structure: * Organizing code into a logical structure using functions and conditional statements. * Understanding the importance of indentation and whitespace in Python.
 
-result = tk.StringVar()
-label_result = tk.Label(root, textvariable=result, font=("Helvetica", 14))
-label_result.pack(pady=10)
-
-
-root.mainloop()
+9. User Interaction: * Designing a user-friendly interface to interact with the program. * Understanding how to provide feedback to the user through output messages.
